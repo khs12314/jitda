@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포켓폴리오 | 투자 선택 기록장</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="포켓폴리오 홈">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23.5 13 16l4.5 4.5L26 10"/><path d="M19.5 10H26v6.5"/></svg></span>
+        <span>pocket<span class="brand-light">folio</span></span>
+      </a>
+      <div class="side-label">내 투자 공간</div>
+      <nav class="side-nav" aria-label="주요 메뉴">
+        <a class="nav-link active" href="#overview"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="4" rx="1.5"/><rect x="13.5" y="10.5" width="7" height="10" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>한눈에 보기</a>
+        <a class="nav-link" href="#portfolios"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6.5 16V10m5 6V5.5m5 10.5v-4m-10-4 5-3 5 5 3.5-4"/></svg></span>포트폴리오</a>
+        <a class="nav-link" href="#insights"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5zM8.5 9h7m-7 3.5h7m-7 3.5h4"/></svg></span>소식과 기록</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-spark">✳</span>
+        <p>투자 초보를 위한<br><strong>나만의 연습장</strong></p>
+        <span class="note-caption">실제와 가상, 함께 비교해요.</span>
+      </div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> 내 브라우저에 저장 중</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>내 투자 공간</span><span class="crumb-slash">/</span><strong>한눈에 보기</strong></div>
+        <div class="top-actions"><span class="today-label" id="today-label"></span><button class="avatar" aria-label="내 프로필">J</button></div>
+      </header>
+
+      <div class="page-content" id="overview">
+        <section class="welcome-row">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> MY INVESTING JOURNAL</div><h1>안녕하세요, 투자자님 <span class="wave">반가워요.</span></h1><p class="welcome-copy">어제의 선택이 오늘 어떤 결과가 되었는지 차근차근 살펴봐요.</p></div>
+          <button class="button button-dark" id="open-trade"><span class="button-plus">+</span> 가상 매매하기</button>
+        </section>
+
+        <section class="overview-grid" aria-label="자산 요약">
+          <article class="card total-card">
+            <div class="card-heading"><div><span class="section-kicker">MY SNAPSHOT</span><h2>내 자산 요약</h2></div><button class="button button-outline account-settings" id="open-account">실제 자산 입력</button></div>
+            <div class="asset-currency-grid">
+              <div class="asset-currency"><span class="currency-name">한국 원화 <span>KRW</span></span><div class="asset-split"><div><span class="asset-type">실제 자산</span><strong id="actual-krw">—</strong><small id="actual-krw-detail"></small></div><div><span class="asset-type">가상 자산</span><strong id="virtual-krw">—</strong><small id="virtual-krw-detail"></small></div></div></div>
+              <div class="asset-currency"><span class="currency-name">미국 달러 <span>USD</span></span><div class="asset-split"><div><span class="asset-type">실제 자산</span><strong id="actual-usd">—</strong><small id="actual-usd-detail"></small></div><div><span class="asset-type">가상 자산</span><strong id="virtual-usd">—</strong><small id="virtual-usd-detail"></small></div></div></div>
+            </div>
+            <div class="card-footnote"><span class="info-icon">i</span><span>달러 환산과 비교에 사용할 환율을 직접 입력하세요.</span><form id="exchange-form"><label for="exchange-rate">1 USD = ₩</label><input id="exchange-rate" name="exchangeRate" type="number" min="0.01" step="0.01" required><button type="submit">적용</button></form></div>
+          </article>
+          <article class="card reflection-card">
+            <div class="reflection-top"><span class="section-kicker">A LITTLE REFLECTION</span><span class="reflect-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5v3m0 11v3m8.5-8.5h-3m-11 0h-3m14.5-6-2.1 2.1m-7.8 7.8L5 18m14 0-2.1-2.1m-7.8-7.8L7 6"/></svg></span></div>
+            <h2>기록은 실력의 씨앗이에요.</h2><p>가상 포트폴리오를 만들고 실제 투자와 비교해 보세요. 매매 이유를 함께 적어두면 다음 선택에 도움이 돼요.</p>
+            <a class="text-link" href="#insights">내 투자 기록 살펴보기 <span>↗</span></a>
+            <div class="reflection-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+        </section>
+
+        <section class="comparison-section" id="portfolios">
+          <div class="section-heading"><div><span class="section-kicker">REALITY VS. PRACTICE</span><h2>실제와 가상, 나란히 보기</h2><p>같은 출발점부터 기록한 자산 변화를 비교해요. <span id="comparison-period"></span></p></div><div class="section-actions"><button class="button button-dark" id="open-trade-inline"><span class="button-plus">+</span> 가상 매매하기</button><button class="button button-outline" id="open-holding"><span class="button-plus">+</span> 실제 자산 입력</button></div></div>
+          <div class="comparison-cards" id="comparison-cards"></div>
+          <article class="card allocation-card" id="allocation-check">
+            <div class="allocation-heading"><div><span class="section-kicker">PORTFOLIO MIX</span><h3>포트폴리오 구성 점검</h3><p>직접 입력한 현재가와 환율 기준으로 자산 비중을 살펴봐요.</p></div><div class="allocation-tabs" role="tablist" aria-label="비중을 볼 포트폴리오"><button class="allocation-tab active" id="actual-allocation-tab" role="tab" aria-selected="true" data-mode="actual">실제</button><button class="allocation-tab" id="virtual-allocation-tab" role="tab" aria-selected="false" data-mode="virtual">가상</button></div></div>
+            <div id="allocation-summary" class="allocation-summary"></div>
+            <div id="allocation-list" class="allocation-list"></div>
+            <p class="allocation-footnote">비중이 큰 종목을 알려주는 참고 정보예요. 투자 판단이나 매매 권유가 아닙니다.</p>
+            <div id="allocation-tooltip" class="allocation-tooltip" role="tooltip" aria-hidden="true"></div>
+          </article>
+          <div class="card holdings-card">
+            <div class="table-heading"><div><h3>보유 종목</h3><p>현재가는 예시값이에요. 종목을 눌러 직접 수정할 수 있어요.</p></div><div class="table-legend"><span><i class="legend-dot actual"></i>실제</span><span><i class="legend-dot virtual"></i>가상</span></div></div>
+            <div class="table-scroll"><table><thead><tr><th>종목</th><th>통화</th><th>현재가 <span class="tiny-help" title="직접 입력한 참고 가격">i</span></th><th>실제 보유</th><th>가상 보유</th><th>비교</th></tr></thead><tbody id="holdings-body"></tbody></table></div>
+            <div class="empty-state hidden" id="empty-holdings">아직 종목이 없어요. 종목 추가로 첫 기록을 남겨보세요.</div>
+          </div>
+          <article class="card snapshots-card" id="snapshots">
+            <div class="snapshots-heading"><div><span class="section-kicker">MONTHLY CHECK-IN</span><h3>월별 자산 스냅샷</h3><p>종목의 참고 현재가를 직접 수정한 뒤, 이번 달 자산을 기록해 보세요.</p></div><button class="button button-dark" id="save-snapshot">이번 달 자산 기록</button></div>
+            <div id="snapshot-confirm" class="snapshot-confirm hidden" role="status"></div>
+            <div class="snapshot-current-note"><span class="snapshot-live-dot"></span> 현재 입력 가격 · 환율 ₩<span id="snapshot-rate-label">—</span> · 기록은 이 브라우저에 저장됩니다.</div>
+            <div id="snapshot-chart" class="snapshot-chart"></div>
+            <div class="snapshot-list" id="snapshot-list"></div>
+          </article>
+        </section>
+
+        <section class="insights-section" id="insights">
+          <div class="section-heading insights-heading"><div><span class="section-kicker">STAY CURIOUS</span><h2>소식과 나의 기록</h2><p>뉴스를 읽고, 내 생각을 남기고, 시간이 지난 뒤 다시 돌아봐요.</p></div><div class="insight-actions"><button class="button button-outline" id="open-news">+ 직접 요약 작성</button><button class="button button-outline" id="open-note">+ 투자 기록</button></div></div>
+          <div class="insights-grid"><article class="card news-card"><div class="panel-title"><div><span class="section-kicker">NEWS LIBRARY</span><h3>종목 소식 서재</h3></div><span class="demo-badge">예시 포함</span></div><div class="news-list" id="news-list"></div></article>
+            <article class="card journal-card"><div class="panel-title"><div><span class="section-kicker">MY JOURNAL</span><h3>투자 기록</h3></div><span class="journal-count" id="journal-count">0개</span></div><div id="undo-trade-area"></div><div class="journal-list" id="journal-list"></div></article>
+          </div>
+        </section>
+        <footer class="page-footer"><span>포켓폴리오는 투자 연습과 기록을 위한 개인용 프로토타입이에요.</span><span>시세·뉴스는 연결되지 않으며, 투자 판단을 대신하지 않아요.</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop hidden" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-header"><div><span class="section-kicker" id="modal-kicker">MY JOURNAL</span><h2 id="modal-title">새 기록</h2></div><button class="modal-close" id="modal-close" aria-label="닫기">×</button></div><form id="modal-form"><div id="modal-fields"></div><div class="modal-actions"><button type="button" class="button button-quiet" id="modal-cancel">취소</button><button type="submit" class="button button-dark" id="modal-submit">저장하기</button></div></form></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
